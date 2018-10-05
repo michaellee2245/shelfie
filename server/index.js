@@ -24,12 +24,27 @@ massive(CONNECTION_STRING)
     console.log('database is connected')
 })
 .catch(error => {
-    console.error('error', error)
+    console.error('database connection error', error)
 })
 
 
-app.get('/', (req, res) => {
-    res.send();
+app.get('/products', (req, res) => {
+    const db = req.app.get('db')
+    db.get_products()
+    .then((products) => {
+        res.send(products)
+    })
+})
+
+app.post('/add_product' , (req, res) => {
+    const db = req.app.get('db')
+    const {productName, productPrice, img} = req.body
+
+    db.add_product([productName, productPrice, img])
+    .then((product) => {
+        res.send("Saved Successfully")
+    })
+
 })
 
 app.listen(port, () => {

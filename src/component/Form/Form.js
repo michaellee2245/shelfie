@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './form.css';
 
 class Form extends Component {
@@ -15,7 +16,8 @@ class Form extends Component {
     }
 
     onAddInventoryClick = (input) => {
-
+        axios.post('http://localhost:8080/add_product', {})
+        .then(response => console.log(response))
     }
 
     onCancelClick = (input) => {

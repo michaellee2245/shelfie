@@ -1,14 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './product.css';
 
 
-function Product(){
+function Product(props){
     return(
         <div className="product_container">
-            <div className="product_img"></div>
+            <div 
+            style={{
+                backgroundImage: `url(${props.img})`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center"
+            }}
+            className="product_img"></div>
             <div className="product_labels">
-                <label>Product Name</label>
-                <label>Price</label>
+                <label>{props.name}</label>
+                <label>{`$ ${props.price}`}</label>
             </div>
         </div>
     )
