@@ -1,0 +1,26 @@
+.main_container {
+    position: fixed;
+    display:flex;
+    width:50vw;
+    height:100vh;
+    background-color:green;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    right:0;
+    
+}
+.form_container {
+    width: 350px;
+    height:500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:purple;
+}
+.img_container {
+    background-color:white;
+    width:250px;
+    height:150px;
+    margin: 10px;
+}

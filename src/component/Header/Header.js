@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import './header.css';
 
 export default function Header() {
     return(
-        <div>
+        <div className="header_container">
             Header
         </div>
     )

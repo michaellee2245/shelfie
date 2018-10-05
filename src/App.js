@@ -9,10 +9,11 @@ class App extends Component {
   render() {
     return (
       <div>
-       
-        <Dashboard />
-        <Form />
         <Header />
+        <div className="dashboard_form_container">
+          <Dashboard />
+          <Form />
+        </div>
 
       </div>
     );
