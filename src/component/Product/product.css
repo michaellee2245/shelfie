@@ -1,6 +1,6 @@
 .product_container{
-    width:300px;
-    height:300px;
+    width:350px;
+    height:350px;
     background-color:#ca4444;
     margin:10px;
     border-radius:10px;
@@ -12,8 +12,8 @@
 }
 .product_img{
     background-color:white;
-    width:250px;
-    height:250px;
+    width:300px;
+    height:300px;
     /* opacity:.5; */
     margin:10px;
 
@@ -22,10 +22,18 @@
     background-color:green;
     display:flex;
     justify-content: space-between;
-    width: 250px;
+    width: 300px;
 
 }
 .product_labels label {
     /* margin:10px; */
     padding:5px;
+}
+.change_buttons {
+    display:flex;
+    flex-direction: row;
+    width:150px;
+    align-items: right;
+    justify-content: space-between;
+    
 }

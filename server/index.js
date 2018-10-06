@@ -44,7 +44,24 @@ app.post('/add_product' , (req, res) => {
     .then((product) => {
         res.send("Saved Successfully")
     })
+})
 
+app.delete('/delete/:id', (req, res) => {
+    const db = req.app.get('db')
+
+    db.delete_product([req.params.id])
+    .then((response) => {
+        res.send("Deleted Successfully")
+    })
+})
+app.put('/edit_product', (req,res) => {
+    const db = req.app.get('db')
+    const {productName, productPrice, img, id} = req.body
+
+    db.edit_product([productName, productPrice, img, id])
+    .then((response) => {
+        res.send("Edited Successfully")
+    })
 })
 
 app.listen(port, () => {

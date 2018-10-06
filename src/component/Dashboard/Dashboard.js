@@ -10,9 +10,13 @@ class Dashboard extends Component {
     }
     
     componentDidMount(){
+        this.getProducts()
+    }
+
+    getProducts = () => {
         axios.get(`http://localhost:8080/products`)
         .then((response) => {
-            console.log(response)
+            // console.log(response)
             this.setState({products: response.data});
         })
         .catch(error => console.error('error', error));
@@ -23,7 +27,7 @@ class Dashboard extends Component {
             <div className="dashboard_container">
                 <div className="products_wrapper">
                     {this.state.products.map((product) => {
-                        return <Product key={product.id} name={product.product_name} price={product.price} img={product.img_url} /> 
+                        return <Product key={product.id} name={product.product_name} price={product.price} img={product.img_url} id={product.id} handleGetProducts={this.getProducts}/> 
                     })}
                 </div>
             </div>
