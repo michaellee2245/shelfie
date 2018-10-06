@@ -18,9 +18,12 @@ class Form extends Component {
     onAddInventoryClick = (input) => {
         axios.post('http://localhost:8080/add_product', {productName: this.state.productName, productPrice: this.state.price, img: this.state.imageUrl})
         .then(response => console.log(response))
-        // .then(() => {
-        //     handleGetProducts()
-        // })
+        .then(() => {
+            this.props.handleUpdateInventory()
+        })
+        .then(() => {
+            this.onCancelClick()
+        })
     }
 
     onCancelClick = (input) => {

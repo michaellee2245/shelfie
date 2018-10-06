@@ -5,29 +5,29 @@ import './dashboard.css';
 
 class Dashboard extends Component {
     
-    state = {
-        products: []
-    }
+    // state = {
+    //     products: []
+    // }
     
-    componentDidMount(){
-        this.getProducts()
-    }
+    // componentDidMount(){
+    //     this.getProducts()
+    // }
 
-    getProducts = () => {
-        axios.get(`http://localhost:8080/products`)
-        .then((response) => {
-            // console.log(response)
-            this.setState({products: response.data});
-        })
-        .catch(error => console.error('error', error));
-    }
+    // getProducts = () => {
+    //     axios.get(`http://localhost:8080/products`)
+    //     .then((response) => {
+    //         // console.log(response)
+    //         this.setState({products: response.data});
+    //     })
+    //     .catch(error => console.error('error', error));
+    // }
 
     render() {
         return(
             <div className="dashboard_container">
                 <div className="products_wrapper">
-                    {this.state.products.map((product) => {
-                        return <Product key={product.id} name={product.product_name} price={product.price} img={product.img_url} id={product.id} handleGetProducts={this.getProducts}/> 
+                    {this.props.handleGetInventory.map((product) => {
+                        return <Product key={product.id} name={product.product_name} price={product.price} img={product.img_url} id={product.id} handleGetProducts={this.props.handleUpdateInventory}/> 
                     })}
                 </div>
             </div>

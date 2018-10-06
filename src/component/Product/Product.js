@@ -13,7 +13,7 @@ function Product(props){
     console.log(props)
 
     // function onEditClick(){
-    //     axios.put('http://localhost:8080/edit_product', {productName=this.props.})
+        
     // }
     return(
         <div>

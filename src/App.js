@@ -8,30 +8,30 @@ import axios from 'axios';
 
 class App extends Component {
 
-//   state = {
-//     products: []
-// }
+  state = {
+    products: []
+}
 
-// componentDidMount(){
-//     this.getProducts()
-// }
+componentDidMount(){
+    this.getProducts()
+}
 
-// getProducts = () => {
-//     axios.get(`http://localhost:8080/products`)
-//     .then((response) => {
-//         console.log(response)
-//         this.setState({products: response.data});
-//     })
-//     .catch(error => console.error('error', error));
-// }
+getProducts = () => {
+    axios.get(`http://localhost:8080/products`)
+    .then((response) => {
+        console.log(response)
+        this.setState({products: response.data});
+    })
+    .catch(error => console.error('error', error));
+}
 
   render() {
     return (
       <div>
         <Header />
         <div className="dashboard_form_container">
-          <Dashboard />
-          <Form />
+          <Dashboard handleGetInventory = {this.state.products} handleUpdateInventory = {this.getProducts}/>
+          <Form handleGetInventory = {this.state.products} handleUpdateInventory = {this.getProducts} />
         </div>
 
       </div>
