@@ -16,7 +16,7 @@ class Form extends Component {
     }
 
     onAddInventoryClick = (input) => {
-        axios.post('http://localhost:8080/add_product', {})
+        axios.post('http://localhost:8080/add_product', {productName: this.state.productName, productPrice: this.state.price, img: this.state.imageUrl})
         .then(response => console.log(response))
     }
 
@@ -39,7 +39,7 @@ class Form extends Component {
                     <input placeholder="Price" name="price" value={this.state.price} onChange={this.onInputChange} />
                     <div>
                         <button onClick={this.onCancelClick}>Cancel</button>
-                        <button>Add to Inventory</button>
+                        <button onClick={this.onAddInventoryClick}>Add to Inventory</button>
                     </div>
 
                 </div>

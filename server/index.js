@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-//Destructering .ENV file
+//Destruct .ENV file
 const{
     CONNECTION_STRING
 } = process.env
